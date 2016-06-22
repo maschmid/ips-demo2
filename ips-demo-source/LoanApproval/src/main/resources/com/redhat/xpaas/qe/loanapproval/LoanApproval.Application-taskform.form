@@ -1,0 +1,33 @@
+
+<form id="487144628">
+<property name="name" value="LoanApproval.Application-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="0" name="age" type="InputTextInteger" id="163041967">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;age (age)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="age"/>
+<property name="outputBinding" value="age"/>
+<property name="fieldClass" value="java.lang.Integer"/>
+</field>
+<field position="1" name="amount" type="InputTextInteger" id="2004035993">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;amount (amount)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="amount"/>
+<property name="outputBinding" value="amount"/>
+<property name="fieldClass" value="java.lang.Integer"/>
+</field>
+<field position="2" name="income" type="InputTextInteger" id="941014131">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;income (income)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="income"/>
+<property name="outputBinding" value="income"/>
+<property name="fieldClass" value="java.lang.Integer"/>
+</field>
+<dataHolder inputId="age" name="#E9E371" type="basicType" outId="age" value="java.lang.Integer" id="age"/>
+<dataHolder inputId="amount" name="#E9E371" type="basicType" outId="amount" value="java.lang.Integer" id="amount"/>
+<dataHolder inputId="income" name="#E9E371" type="basicType" outId="income" value="java.lang.Integer" id="income"/>
+</form>

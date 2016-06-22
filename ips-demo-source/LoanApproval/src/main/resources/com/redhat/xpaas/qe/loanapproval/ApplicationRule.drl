@@ -1,0 +1,69 @@
+package com.redhat.xpaas.qe.loanapproval
+
+import com.redhat.xpaas.qe.loanapproval.Application
+
+rule "Reject people older than 60"
+ruleflow-group 'approval'
+salience 1000
+when
+    $application: Application(age > 60)
+then
+    modify ($application) {
+        setApproval(false);
+    }
+end
+
+rule "Reject people with low income"
+ruleflow-group 'approval'
+salience 1000
+when
+    $application: Application($income: income, amount > (5 * $income))
+then
+    modify ($application) {
+        setApproval(false);
+    }
+end
+
+rule "Approve low amounts automatically"
+ruleflow-group 'approval'
+salience 500
+when
+    $application: Application(amount < 100)
+then
+    modify ($application) {
+        setApproval(true);
+    }
+end
+
+rule "Approve low amounts for young"
+ruleflow-group 'approval'
+salience 500
+when
+    $application: Application(age > 20, amount < 200)
+then
+    modify ($application) {
+        setApproval(true);
+    }
+end
+
+rule "Approve higher amounts for midlle-aged"
+ruleflow-group 'approval'
+salience 500
+when
+    $application: Application(age > 30, age < 60, amount < 800)
+then
+    modify ($application) {
+        setApproval(true);
+    }
+end
+
+rule "Approve low amounts for old"
+ruleflow-group 'approval'
+salience 500
+when
+    $application: Application(age > 60, amount < 500)
+then
+    modify ($application) {
+        setApproval(true);
+    }
+end
